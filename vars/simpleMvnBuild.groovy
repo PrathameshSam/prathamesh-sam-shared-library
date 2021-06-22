@@ -7,6 +7,5 @@ def call(Map config){
                 echo "${config.crawler_env}"
                 echo "${config.gcp_project}"
         '''
-        }
     }
 }
