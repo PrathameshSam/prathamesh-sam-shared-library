@@ -1,6 +1,12 @@
 def call(Map config){
     node {
-            sh "mvn clean install -P${config.ENV} -DskipTest"
+        sh '''
+                // sh "mvn clean install -P${config.ENV} -DskipTest"
+                git version
+                docker version
+                echo "${config.crawler_env}"
+                echo "${config.gcp_project}"
+        '''
         }
     }
 }
