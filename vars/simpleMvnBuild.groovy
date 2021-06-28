@@ -25,16 +25,16 @@ void call(String [] args){
 
 	                rtMaven.run pom: 'pom.xml', goals: 'clean install -U', buildInfo: buildInfo
 	            }
-
-            }catch(Exception ex){
-              currentBuild.result = 'FAILURE'
-			  notifyBuild()
-   		      throw ex
             }
-                echo "Current build status: " + currentBuild.result
-                if (currentBuild.result == 'UNSTABLE') {
-                  currentBuild.result = 'FAILURE'
-                    error("Tests failed")
+            // }catch(Exception ex){
+            //   currentBuild.result = 'FAILURE'
+			//   notifyBuild()
+   		    //   throw ex
+            // }
+            //     echo "Current build status: " + currentBuild.result
+            //     if (currentBuild.result == 'UNSTABLE') {
+            //       currentBuild.result = 'FAILURE'
+            //         error("Tests failed")
                  }
             }
           }
